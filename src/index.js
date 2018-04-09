@@ -24,7 +24,7 @@ class Yell {
   // stops hearing the speaker
   mute(speaker, speech) {
     if (this.hearers[speaker]) {
-      this.hearers[speaker] = this.hearers[speaker].filter(sp => sp != speech);
+      this.hearers[speaker] = this.hearers[speaker].filter(sp => sp !== speech);
     }
   }
 }
