@@ -6,7 +6,7 @@
   "author": "alejandro alvarez",
   "license": "MIT",
   "dependencies": {
-    "yelljs": "^0.0.1"
+    "yelljs": "^0.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
