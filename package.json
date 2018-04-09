@@ -1,13 +1,11 @@
 {
   "name": "yelljs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "src/index.js",
   "repository": "https://github.com/alejoreact/yelljs",
   "author": "alejandro alvarez",
   "license": "MIT",
-  "dependencies": {
-    "yelljs": "^0.0.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",

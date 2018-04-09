@@ -6216,10 +6216,6 @@ yargs@~3.10.0:
     decamelize "^1.0.0"
     window-size "0.1.0"
 
-yelljs@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/yelljs/-/yelljs-0.0.1.tgz#b6555250e46f7e215a304c58ed32d29281968c4a"
-
 yeoman-environment@^2.0.0, yeoman-environment@^2.0.5:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/yeoman-environment/-/yeoman-environment-2.0.6.tgz#ae1b21d826b363f3d637f88a7fc9ea7414cb5377"
