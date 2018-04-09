@@ -31,12 +31,14 @@ class Yell {
 
 const yellInstance = new Yell();
 
-export const yell = (...args) => {
+const yell = (...args) => {
   yellInstance.yell(...args);
 };
-export const mute = (...args) => {
+const mute = (...args) => {
   yellInstance.mute(...args);
 };
-export const hear = (...args) => {
+const hear = (...args) => {
   yellInstance.hear(...args);
 };
+
+export { yell, mute, hear };
