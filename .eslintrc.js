@@ -9,4 +9,8 @@ module.exports = {
             "experimentalObjectRestSpread": true
         }
     },
+    env: {
+        'jest': true,
+        'node': true
+    }
 };

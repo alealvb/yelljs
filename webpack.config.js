@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   target: 'node',
   context: `${__dirname}/src`,
-  entry: './index.js',
+  entry: './yell.js',
   output: {
     path: `${__dirname}/dist`,
     filename: 'index.js',

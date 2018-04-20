@@ -19,6 +19,7 @@ class YellJs {
     } else {
       this.hearers[speaker] = [speech];
     }
+    return speaker;
   }
 
   // stops hearing the speaker
