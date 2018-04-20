@@ -1,11 +1,13 @@
 const path = require('path');
 
 module.exports = {
+  target: 'node',
   context: `${__dirname}/src`,
   entry: './index.js',
   output: {
     path: `${__dirname}/dist`,
     filename: 'index.js',
+    libraryTarget: 'commonjs',
   },
   resolve: {
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
@@ -28,14 +30,6 @@ module.exports = {
             presets: ['env', 'stage-2'],
           },
         },
-      },
-      {
-        test: /\.(s*)css$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-      {
-        test: /\.(jpe?g|png|woff|woff2|eot|ttf|svg|otf)(\?[a-z0-9=.]+)?$/,
-        loader: 'url-loader',
       },
     ],
   },

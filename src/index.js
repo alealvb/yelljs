@@ -1,4 +1,4 @@
-class Yell {
+class YellJs {
   hearers = {}
 
   // yell through a speaker
@@ -29,7 +29,7 @@ class Yell {
   }
 }
 
-const yellInstance = new Yell();
+const yellInstance = new YellJs();
 
 const yell = (...args) => {
   yellInstance.yell(...args);
@@ -41,4 +41,4 @@ const hear = (...args) => {
   yellInstance.hear(...args);
 };
 
-export { yell, mute, hear };
+module.exports = { yell, mute, hear };
