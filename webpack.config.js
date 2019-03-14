@@ -2,10 +2,10 @@ const path = require('path');
 
 module.exports = {
   target: 'node',
-  context: `${__dirname}/src`,
+  context: path.resolve(__dirname, 'src'),
   entry: './yell.js',
   output: {
-    path: `${__dirname}/dist`,
+    path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
     libraryTarget: 'commonjs',
   },
@@ -26,9 +26,6 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['env', 'stage-2'],
-          },
         },
       },
     ],
