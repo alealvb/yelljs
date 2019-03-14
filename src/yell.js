@@ -1,45 +1,37 @@
-class YellJs {
+class Yell {
   hearers = {}
 
   // yell through a speaker
   // words will be pass to the hearers
-  yell(speaker, words) {
+  yell = (speaker, ...words) => {
     if (this.hearers[speaker]) {
       this.hearers[speaker].forEach((speech) => {
-        speech(words);
+        speech(...words);
       });
     }
   }
 
   // hear through a speaker
   // speech is a callback to execute when is yelled from this speaker
-  hear(speaker, speech) {
+  hear = (speaker, speech) => {    
+    if (!speech) {
+      throw new Error("speech(callback) was not passed to yell's hear method.");
+    }
     if (this.hearers[speaker]) {
       this.hearers[speaker].push(speech);
     } else {
       this.hearers[speaker] = [speech];
     }
-    return speaker;
   }
 
   // stops hearing the speaker
-  mute(speaker, speech) {
+  mute = (speaker, speech) => {
     if (this.hearers[speaker]) {
       this.hearers[speaker] = this.hearers[speaker].filter(sp => sp !== speech);
     }
   }
 }
 
-const yellInstance = new YellJs();
+const yellInstance = new Yell();
 
-const yell = (...args) => {
-  yellInstance.yell(...args);
-};
-const mute = (...args) => {
-  yellInstance.mute(...args);
-};
-const hear = (...args) => {
-  yellInstance.hear(...args);
-};
-
-module.exports = { yell, mute, hear };
+export const { yell, mute, hear } = yellInstance;
