@@ -1,6 +1,6 @@
 {
   "name": "yelljs",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "main": "dist/yell.js",
   "types": "dist/yell.d.ts",
   "repository": "https://github.com/alejoreact/yelljs",
