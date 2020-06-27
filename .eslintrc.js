@@ -1,16 +1,22 @@
 module.exports = {
-    "extends": "airbnb-base",
-    "parser": "babel-eslint",
-    "parserOptions": {
-        "ecmaVersion": 8,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "modules": true,
-            "experimentalObjectRestSpread": true
-        }
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
+  parser: 'babel-eslint',
+  parserOptions: {
+    ecmaVersion: 8,
+    sourceType: 'module',
+    ecmaFeatures: {
+      modules: true,
+      experimentalObjectRestSpread: true,
     },
-    env: {
-        'jest': true,
-        'node': true
-    }
+  },
+  plugins: [
+    '@typescript-eslint',
+  ],
+  env: {
+    jest: true,
+    node: true,
+  },
 };
