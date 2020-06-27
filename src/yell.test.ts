@@ -1,4 +1,4 @@
-import Yell, { hear, yell, mute } from './yell.js';
+import Yell, { hear, yell, mute } from './yell';
 
 test('hear and receive a value', () => {
   const value = 'this is a string';

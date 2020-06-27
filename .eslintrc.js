@@ -3,7 +3,6 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
   ],
-  parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 8,
     sourceType: 'module',
