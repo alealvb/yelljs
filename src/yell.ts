@@ -14,6 +14,13 @@ export default class Yell {
     });
   };
 
+  yellAsync = async (speaker: string, ...words: unknown[]): Promise<void> => {
+    const funcArray = this.hearers.get(speaker);
+    if (!funcArray) return;
+
+    await Promise.allSettled(funcArray.map((speech) => speech(...words)));
+  };
+
   // hear through a speaker
   // speech is a callback that gets executed when the speaker key is yelled
   // returns a silence function to mute this exact hear action
@@ -52,4 +59,4 @@ export default class Yell {
 
 const yellInstance = new Yell();
 
-export const { yell, mute, hear } = yellInstance;
+export const { yell, mute, hear, yellAsync } = yellInstance;

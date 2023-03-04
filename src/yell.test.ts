@@ -1,4 +1,4 @@
-import Yell, { hear, yell, mute } from "./yell";
+import Yell, { hear, yell, mute, yellAsync } from "./yell";
 
 test("hear and receive a value", () => {
   const value = "this is a string";
@@ -82,4 +82,32 @@ test("yell instance must not affect global yell", () => {
 
   yellInstance.yell("+2");
   expect(total).toBe(2);
+});
+
+test("yell should not wait for promises", async () => {
+  let total = 0;
+  // we set this variable to ensure we resolve it before jest exits
+  const promises: Promise<unknown>[] = [];
+  hear("plus", async () => {
+    const promise = new Promise((resolve) => setTimeout(resolve, 0));
+    promises.push(promise);
+    await promise;
+    total += 1;
+  });
+  yell("plus");
+  expect(total).toBe(0);
+
+  // wait for the promises to resolve
+  await Promise.all(promises);
+});
+
+test("yellAsync should wait for promises", async () => {
+  let total = 0;
+  // we set this variable to ensure we resolve it before jest exits
+  hear("plus", async () => {
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    total += 1;
+  });
+  await yellAsync("plus");
+  expect(total).toBe(1);
 });
